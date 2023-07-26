@@ -1,0 +1,19 @@
+.buttonStart{
+    width: max-content;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #5A6F08;
+    padding: 2%;
+}
+.buttonStart:hover{
+    transform: scale(1.05);
+}
+
+.linkStart{
+    color: #FFF;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
