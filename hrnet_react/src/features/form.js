@@ -1,17 +1,19 @@
 import { createAction, createReducer } from '@reduxjs/toolkit'
+import { mockDatas } from '../data/MOCK_DATA'
 
 // State initial
 const initialState = {      
   firstname: '',
   lastname: '',
-  dateOfBirth: '',
-  startDate: '',
+  dateOfBirth: '' ,
+  startDate: '' ,
   street: '',
   city: '',
   state: '',
   zipCode: '',
   department: '',
-  datas: []  
+  datas: mockDatas,
+  counterData: false
 }
 
 // Actions 
@@ -85,6 +87,8 @@ export const addDatas =createAction(
     })
 )
 
+export const toggleCounterData = createAction('toggle/counterData')
+
 // Reducer
 
 export default createReducer(initialState, (builder) => 
@@ -98,11 +102,11 @@ export default createReducer(initialState, (builder) =>
         return
     })
     .addCase(addDateOfBirth, (draft, action) => {
-        draft.dateOfBirth = action.payload
+        draft.dateOfBirth = action.payload.toString()
         return
     })
     .addCase(addStartDate, (draft, action) => {
-        draft.startDate = action.payload
+        draft.startDate = action.payload.toString()
         return
     })
     .addCase(addStreet, (draft, action) => {
@@ -128,14 +132,35 @@ export default createReducer(initialState, (builder) =>
 
 
     .addCase(addDatas, (draft, action) => {
-        draft.datas = [...draft.datas, action.payload]
-        draft.firstname = ''
-        draft.lastname = ''
-        draft.dateOfBirth = ''
-        draft.startDate = ''
-        draft.street = ''
-        draft.state = ''
-        draft.zipCode = ''
-        draft.department = ''
+        if(
+            draft.firstname === '' &&
+            draft.lastname === '' &&
+            draft.dateOfBirth === '' &&
+            draft.startDate === '' &&
+            draft.street === '' &&
+            draft.state === '' &&
+            draft.zipCode === '' &&
+            draft.department === '' &&
+            draft.city === ''
+        ){
+            return
+        } else {
+            
+            draft.datas = [...draft.datas, action.payload]
+            draft.firstname = ''
+            draft.lastname = ''
+            draft.dateOfBirth = ''
+            draft.startDate = ''
+            draft.street = ''
+            draft.state = ''
+            draft.zipCode = ''
+            draft.department = ''
+            draft.city = ''
+            draft.counterData = true
+            return
+        }
+    })
+    .addCase(toggleCounterData, (draft) => {
+        draft.counterData = false
     })
 )
