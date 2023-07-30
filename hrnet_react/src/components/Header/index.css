@@ -11,6 +11,10 @@ header{
     font-weight: 600;
 }
 
+.logo:hover{
+    transform: scale(0.55);
+}
+
 .linkContainer{
     display: flex;
     align-items: center;
