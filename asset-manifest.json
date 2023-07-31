@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/P14_HRnet/hrnet_react/static/css/main.a828facc.css",
-    "main.js": "/P14_HRnet/hrnet_react/static/js/main.ff21eddc.js",
-    "static/js/787.312e6e78.chunk.js": "/P14_HRnet/hrnet_react/static/js/787.312e6e78.chunk.js",
-    "static/media/WH_logo.jpg": "/P14_HRnet/hrnet_react/static/media/WH_logo.550a61bba16a38a1d91d.jpg",
-    "index.html": "/P14_HRnet/hrnet_react/index.html",
-    "main.a828facc.css.map": "/P14_HRnet/hrnet_react/static/css/main.a828facc.css.map",
-    "main.ff21eddc.js.map": "/P14_HRnet/hrnet_react/static/js/main.ff21eddc.js.map",
-    "787.312e6e78.chunk.js.map": "/P14_HRnet/hrnet_react/static/js/787.312e6e78.chunk.js.map"
+    "main.css": "/P14_HRnet/static/css/main.a828facc.css",
+    "main.js": "/P14_HRnet/static/js/main.3939898f.js",
+    "static/js/787.312e6e78.chunk.js": "/P14_HRnet/static/js/787.312e6e78.chunk.js",
+    "static/media/WH_logo.jpg": "/P14_HRnet/static/media/WH_logo.550a61bba16a38a1d91d.jpg",
+    "index.html": "/P14_HRnet/index.html",
+    "main.a828facc.css.map": "/P14_HRnet/static/css/main.a828facc.css.map",
+    "main.3939898f.js.map": "/P14_HRnet/static/js/main.3939898f.js.map",
+    "787.312e6e78.chunk.js.map": "/P14_HRnet/static/js/787.312e6e78.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a828facc.css",
-    "static/js/main.ff21eddc.js"
+    "static/js/main.3939898f.js"
   ]
 }
