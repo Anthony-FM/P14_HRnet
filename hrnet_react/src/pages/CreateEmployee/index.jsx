@@ -127,16 +127,7 @@ export default function CreateEmployee(){
         <div className="divContainer">
             <div className='input-wrapper'>
                 <label className="department" htmlFor="state">Derpatment</label>
-                <select onChange={(e) => dispatch(addDepartment(e.target.value))}>
-                    {departments.map((department, index) => (
-                        <OptionStates 
-                            value={department}
-                            name={department}
-                            key={`${department}-${index}`}
-                        />
-                        ))
-                    }
-                </select>           
+                <OptionStates departments={departments}/>         
             </div>
         </div>
         
