@@ -6,12 +6,11 @@ import { useSelector,  useDispatch} from 'react-redux'
 // selector
 import { selectHeader } from '../../utils/redux/selector'
 // action
-import header, { toggleLink } from '../../features/header'
+import { toggleLink } from '../../features/header'
 
 export default function Header(){
     const dispatch = useDispatch()
     const headerState = useSelector(selectHeader).employeeList
-    console.log(header)
 
     // Récupération du path de l'URL
     let location = window.location.href

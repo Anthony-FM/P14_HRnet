@@ -6,7 +6,7 @@
 }
 
 h1{
-    color: #70813D;
+    color: #2B3404;
     text-align: center;
 }
 
@@ -45,7 +45,7 @@ table th {
   padding-top: 12px;
   padding-bottom: 12px;
   /* text-align: center; */
-  background-color: #70813D;
+  background-color: #2B3404;
   color: white;
 }
 
@@ -55,7 +55,7 @@ button{
   height: 40px;
   border: none;
   border-radius: 10px;
-  background-color: #70813D;
+  background-color: #2B3404;
   color: #FFF;
   cursor: pointer;
   
@@ -120,6 +120,6 @@ span{
 
 strong{
   font-weight: 700;
-  color: #70813D;
+  color: #2B3404;
   margin: 5px;
 }

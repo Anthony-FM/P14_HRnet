@@ -77,10 +77,8 @@ export default function CreateEmployee(){
                         showIcon
                         isClearable={true}
                         showYearDropdown
-                        // showMonthYearDropdown
-                        // selected={dateOfBirth}
+                        title='calendar'
                     />
-                    {/* <input id="dateOfBirth" type="date"  onChange={(e) => dispatch(addDateOfBirth(e.target.value))} /> */}
                 </div>
                 <div className='input-wrapper'>
                     <label className="label" htmlFor="startDate">Start Date</label>
@@ -91,7 +89,7 @@ export default function CreateEmployee(){
                         dateFormat='dd/MM/yyyy'
                         showIcon
                         isClearable
-                        // selected={startDate}
+                        title='calendar'
                     />
                 </div>
             </div>
@@ -107,16 +105,7 @@ export default function CreateEmployee(){
                 </div>
                 <div className='input-wrapper'>
                     <label className="label" htmlFor="state">State</label>
-                    <select onChange={(e) => dispatch(addState(e.target.value))}>
-                        {states.map((state, index) => (
-                            <OptionStates 
-                                value={state.abbreviation}
-                                name={state.name}
-                                key={`${state}-${index}`}
-                            />
-                            ))
-                        }
-                    </select>           
+                    <OptionStates states={states}/>          
                 </div>
                 <div className='input-wrapper'>
                     <label className="label" htmlFor="zipCode">Zip code</label>

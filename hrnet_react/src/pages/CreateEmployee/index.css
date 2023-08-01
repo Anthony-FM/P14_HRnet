@@ -5,7 +5,7 @@
 }
 
 .title{
-    color: #70813D;
+    color: #2B3404;
     text-align: center;
 }
 
@@ -27,7 +27,7 @@
 }
 
 legend{
-    color: #6C8310;
+    color: #2B3404;
     font-style: italic;
 }
 
@@ -40,7 +40,7 @@ legend{
     margin-bottom: 10px;
     font-size: 1.1rem;
     font-weight: 600;
-    color: #6C8310;
+    color: #2B3404;
 }
 
 input, select{
@@ -56,7 +56,7 @@ input:focus, select:focus{
 
 .department{
     text-align: center;
-    color: #6C8310;
+    color: #2B3404;
     font-weight: 600;
     font-size: 1.1rem;
     margin-bottom: 10px;

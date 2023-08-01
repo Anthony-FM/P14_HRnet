@@ -5,7 +5,7 @@ header{
     background-color: #92AC19;
 }
 .logo{
-    color: #5A6F08;
+    color: #2B3404;
     text-decoration: none;
     font-size: 2rem;
     font-weight: 600;
@@ -23,12 +23,12 @@ header{
 .link{
     text-decoration: none;
     /* color: #6B841B; */
-    color: #FFF;
+    color: #2B3404;
     font-size: 1.1rem;
     margin-right: 10px;
 }
 .link:hover{
-    color: #FFF;
+    color: #2B3404;
     font-style: italic;
     font-weight: 600;
 }

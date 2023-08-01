@@ -38,4 +38,8 @@ export const COLUMNS = [
         Headers: "ZipCode",
         accessor: "zipCode",
     }
+    ,{
+        Headers: "Department",
+        accessor: "department",
+    }
 ]
