@@ -9,6 +9,9 @@
 ![Static Badge](https://img.shields.io/badge/React--redux-%5E8.1.1-%23764ABC)
 ![Static Badge](https://img.shields.io/badge/Redux-%5E4.2.1-%23764ABC)
 ![Static Badge](https://img.shields.io/badge/React--Router-%5E6.14.2-%23F44250)
+![Static Badge](https://img.shields.io/badge/NodeJs-v18.16.1-%2343853D)
+![Static Badge](https://img.shields.io/badge/Yarn-1.22.19-%232188B6)
+
 
 # Projet OC 14 - Migrer une librairie jQuery vers React
 HRnet is Wealth Heatlh's internal application that you can create and view employee records
