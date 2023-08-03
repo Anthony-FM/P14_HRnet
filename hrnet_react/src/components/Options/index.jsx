@@ -3,8 +3,20 @@ import './index.css'
 import { useDispatch } from 'react-redux'
 // action
 import { addDepartment, addState } from '../../features/form'
+import React from 'react'
 
-export default function OptionStates({departments, states}){
+/**
+ * Create a Select react component with two parameter:
+ * 
+ * @param {string[]} department
+ 
+ * @param {Object[]} states
+ * @param {string} states[].name
+ * @param {string} states[].abbreviation
+ * 
+ * @returns {React.JSX.select}
+ */
+export default function Option({departments, states}){
     const dispatch = useDispatch()
     return departments ? 
     (
@@ -18,7 +30,8 @@ export default function OptionStates({departments, states}){
         </select>
         
     ) 
-    : 
+    :    
+    
     states ? 
     (
         <select onChange={(e) => dispatch(addState(e.target.value))} aria-label='states'>
