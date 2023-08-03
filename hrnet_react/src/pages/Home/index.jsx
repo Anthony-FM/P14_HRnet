@@ -1,9 +1,14 @@
 import './index.css'
-//
+// assest
 import WHLOGO from '../../assets/WH_logo.jpg'
 //compoants
 import ButtonStarted from '../../components/ButtonStarted'
 
+/**
+ * Create a component Home * 
+ * 
+ * @returns {React.JSX.Element}
+ */
 export default function Home(){
     return <section className='home'>
         

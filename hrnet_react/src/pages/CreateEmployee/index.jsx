@@ -1,6 +1,6 @@
 import './index.css'
 // composant
-import OptionStates from '../../components/OptionStates'
+import Options from '../../components/Options'
 import Modal from '../../components/Modal'
 // hook
 import { useDispatch, useSelector } from 'react-redux'
@@ -14,25 +14,50 @@ import {
     addStartDate,
     addStreet,
     addCity,
-    addState,
-    addZipCode,
-    addDepartment, 
+    addZipCode, 
     addDatas} from '../../features/form'
 // Datas
 import { stateData, departmentDatas} from '../../data'
 // Store
 import store from '../../utils/redux/store'
+
+/**
+ *  For using this npm package react-datepicker
+ *  use npm in terminal and install with:
+ *  npm i react-datepicker 
+ *  command
+ */
 // date picker
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
+import React from 'react'
 
-
+/**
+ * @param { Object } datas
+ * @param { string } datas.firstname - firstname
+ * @param { string } datas.lastname - lasstname
+ * @param { Object.<number> } datas.dateOfBirth - dateOfBirth
+ * @param { Object.<number> } datas.startDate - startDate
+ * @param { string } datas.street - street
+ * @param { string } datas.city - city
+ * @param { string } datas.state - state
+ * @param { number } datas.zipCode - zipCode
+ * @param { string } datas.department - department
+ * @param {*} e - click of the save button
+ */
 export function saveData(e, datas){
     e.preventDefault()
     const dispatch = store.dispatch
     dispatch(addDatas(datas))          
 }
 
+/**
+ * Create a React component Create Employee Page's
+ * using de npm package React components react-datepicker
+ * and the component Options 
+ * 
+ * @returns {React.JSX.Element}
+ */
 export default function CreateEmployee(){
     const counterData = useSelector(selectForm).counterData
     const dispatch = useDispatch()
@@ -105,7 +130,7 @@ export default function CreateEmployee(){
                 </div>
                 <div className='input-wrapper'>
                     <label className="label" htmlFor="state">State</label>
-                    <OptionStates states={states}/>          
+                    <Options states={states}/>          
                 </div>
                 <div className='input-wrapper'>
                     <label className="label" htmlFor="zipCode">Zip code</label>
@@ -116,7 +141,7 @@ export default function CreateEmployee(){
         <div className="divContainer">
             <div className='input-wrapper'>
                 <label className="department" htmlFor="state">Derpatment</label>
-                <OptionStates departments={departments}/>         
+                <Options departments={departments}/>         
             </div>
         </div>
         

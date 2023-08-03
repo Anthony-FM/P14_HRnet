@@ -1,5 +1,8 @@
 import { format } from 'date-fns'
 
+/**
+ * Creation of columns
+ */
 export const COLUMNS = [
     {
         Headers: "First Name",

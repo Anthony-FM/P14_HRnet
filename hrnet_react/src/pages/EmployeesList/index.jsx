@@ -6,6 +6,13 @@ import { selectForm } from '../../utils/redux/selector'
 //component
 import Table from '../../components/Table'
 
+/**
+ * Create a Current Employees Page's
+ * With the component Table
+ * 
+ * 
+ * @returns {React.JSX.Element}
+ */
 export default function EmployeesList(){
     const data = useSelector(selectForm).datas    
 
@@ -14,5 +21,5 @@ export default function EmployeesList(){
         
         <Table data={data} />
         
-        </section>
+    </section>
 }
