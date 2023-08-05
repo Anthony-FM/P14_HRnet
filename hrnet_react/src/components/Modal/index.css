@@ -22,4 +22,43 @@
     color: #6B8118;
     font-size: 1.3rem;
     font-weight: 600;
+    position: relative;
 }
+
+.crossContainer{
+    background-color: #2b3404;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: -25px;
+    top: -25px;
+    cursor: pointer;
+}
+
+.crossContainer:active{
+    transform: scale(0.95);
+}
+.crossContainer:hover{
+    transform: scale(1.05);
+}
+
+.leftCross, .rigthCross{
+    width: 5px;
+    height: 15px;
+    background-color: #fff;
+    position: absolute;
+}
+
+.leftCross{
+    transform: rotate(45deg);
+
+}
+.rigthCross{
+    transform: rotate(315deg);
+}
+    
+

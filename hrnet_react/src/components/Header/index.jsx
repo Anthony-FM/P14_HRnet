@@ -20,7 +20,7 @@ export default function Header(){
 
     // Récupération du path de l'URL
     let location = window.location.href
-    location.includes("EmployeesList") ?? dispatch(toggleLink(true))
+    location.includes("EmployeesList") ? dispatch(toggleLink(false)) : dispatch(toggleLink(true))
 
     return <header>
         <div>
@@ -35,5 +35,6 @@ export default function Header(){
                 
             }     
         </div>
+        {}
     </header>
 }

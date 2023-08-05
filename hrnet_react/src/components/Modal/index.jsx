@@ -1,28 +1,21 @@
 import './index.css'
-//action
-import { toggleModal } from '../../features/modal'
-import { toggleCounterData } from '../../features/form'
-// store
-import store from '../../utils/redux/store'
-import React from 'react'
 
 /**
- * 
- * function allow to close the Modal
- * @function
+ * Create a modal that takes up the entire screen 
+ * with its message at its center
+ *  
+ * @param {string} message
+ * @param {Function} closeModal
+ * @returns {JSX.Element} return a react modal component
  */
-export function closeModal(){
-    const dispatch = store.dispatch
-    dispatch(toggleModal(false))
-    dispatch(toggleCounterData())
-}
-
-/**
- * 
- * @returns {React.JSX.Element}
- */
-export default function Modal(){
-    return <div className='modalcontainer' onClick={() => closeModal()}> 
-        <div className='modal'> Employee created !! </div>    
+export default function Modal({message, closeModal}){
+    return <div className='modalcontainer' onClick={closeModal}> 
+        <div className='modal'> 
+            {message} 
+            <div className="crossContainer">
+                <div className="leftCross"></div>
+                <div className="rigthCross"></div>
+            </div>
+        </div>    
     </div>
 }

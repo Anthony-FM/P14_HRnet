@@ -1,7 +1,8 @@
 import './index.css'
 // composant
 import Options from '../../components/Options'
-import Modal from '../../components/Modal'
+// import Modal from '../../components/Modal'
+import { Modal } from 'p14-modal-plugin-afm/dist'
 // hook
 import { useDispatch, useSelector } from 'react-redux'
 // selector
@@ -15,7 +16,9 @@ import {
     addStreet,
     addCity,
     addZipCode, 
-    addDatas} from '../../features/form'
+    addDatas,
+    toggleCounterData
+} from '../../features/form'
 // Datas
 import { stateData, departmentDatas} from '../../data'
 // Store
@@ -30,7 +33,7 @@ import store from '../../utils/redux/store'
 // date picker
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
-import React from 'react'
+// import React, { useState } from 'react'
 
 /**
  * @param { Object } datas
@@ -76,7 +79,7 @@ export default function CreateEmployee(){
       } 
     const dateOfBirth = useSelector(selectForm).dateOfBirth
     const startDate = useSelector(selectForm).startDate  
-    
+    // const [modalstate, setModalState] = useState(false)
    
 
     return <section className='create-employee'>
@@ -147,7 +150,7 @@ export default function CreateEmployee(){
         
         
         <button onClick={(e) => saveData(e, datas )} className="saveButton">Save</button>  
-        {counterData === true ? (<Modal/>) : ''}
+        {counterData === true ? (<Modal message="Create employee !!" setModalState={() => dispatch(toggleCounterData())} />) : ''}
         
     </section>
 }
