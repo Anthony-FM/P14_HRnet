@@ -64,3 +64,7 @@ Ouvrez [http://localhost:3000](http://localhost:3000) pour voir sur votre naviga
 ##### Démarrer avec Create React App
 
 Ce projet a été lancé avec [Create React App](https://github.com/facebook/create-react-app).
+
+###### Github pages
+
+💻  https://anthony-fm.github.io/P14_HRnet/#/  💻
