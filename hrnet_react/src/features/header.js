@@ -1,7 +1,7 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
 
 const initialState = {
-    employeeList : false
+    employeeList : true
 }
 
 export const toggleLink = createAction(
