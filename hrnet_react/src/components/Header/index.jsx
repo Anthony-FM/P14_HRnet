@@ -18,10 +18,6 @@ export default function Header(){
     const dispatch = useDispatch()
     const headerState = useSelector(selectHeader).employeeList
 
-    // Récupération du path de l'URL
-    let location = window.location.href
-    location.includes("EmployeesList") ? dispatch(toggleLink(false)) : dispatch(toggleLink(true))
-
     return <header>
         <div>
             <Link to="/" className='logo' onClick={() => dispatch(toggleLink(false))}>HRnet</Link>
