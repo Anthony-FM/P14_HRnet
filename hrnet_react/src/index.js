@@ -10,6 +10,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import CreateEmployee from './pages/CreateEmployee';
 import EmployeesList from './pages/EmployeesList';
+import NotFound from './pages/Notfound';
 // store
 import { Provider } from 'react-redux';
 import store from './utils/redux/store';
@@ -26,6 +27,7 @@ root.render(
           <Route path="/" element={<Home/>} />
           <Route path="/CreateEmployee" element={<CreateEmployee/>} />
           <Route path="/EmployeesList" element={<EmployeesList/>} />
+          <Route path="*" element={<NotFound/>} />
         </Routes>
     </Router>
 
