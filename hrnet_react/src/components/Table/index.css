@@ -4,15 +4,16 @@
     width: 100%;
     justify-content: center;    
     align-items: center;
+    padding: 1%;
 }
 
 
 table {
-  /* font-family: Arial, Helvetica, sans-serif; */
   border-collapse: collapse;
-  width: 80%;
-  border: none;
+  width: 100%;
+  border: none;  
 }
+
 
 table td, table th {
   border: 1px solid #ddd;
@@ -35,6 +36,11 @@ table th {
   /* text-align: center; */
   background-color: #2B3404;
   color: white;
+  
+}
+
+th col{
+  display: flex;
 }
 
 button{
@@ -104,10 +110,45 @@ span{
   display: flex;
   align-items: center;
   padding: 5px;
+  justify-content: center;
 }
 
 strong{
   font-weight: 700;
   color: #2B3404;
   margin: 5px;
+}
+
+.tableContainer{
+  display: flex;
+  justify-content: center;
+  
+}
+
+@media screen and (max-width: 900px) {
+  .tableContainer{
+    width: 80vw;
+    height: 80vh;
+    overflow: scroll;
+    position: relative;
+  }
+  table{
+    position: absolute;
+    left: 0;
+  }
+}
+
+.arrow{
+  border: solid #FFF;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-top: 5px;
+}
+
+.down{
+  transform: rotate(45deg);
+}
+.up{
+  transform: rotate(-135deg);
 }

@@ -88,34 +88,37 @@ export default function Table({ data }){
 
             </div>
         </div>
-        <table {...getTableProps()}>
-            <thead>
-                {headerGroups.map((headerGroup) => (
-                <tr {...headerGroup.getHeaderGroupProps()}>
-                    {headerGroup.headers.map((columns) => (
-                        <th {...columns.getHeaderProps(columns.getSortByToggleProps())}>
-                            {columns.render("Headers")}
-                            <span>
-                                {columns.isSorted ? (columns.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
-                            </span>
-                        </th>
+        <div className="tableContainer">
+
+            <table {...getTableProps()}>
+                <thead>
+                    {headerGroups.map((headerGroup) => (
+                    <tr {...headerGroup.getHeaderGroupProps()}>
+                        {headerGroup.headers.map((columns) => (
+                            <th {...columns.getHeaderProps(columns.getSortByToggleProps())}>
+                                {columns.render("Headers")}
+                                <span>
+                                    {columns.isSorted ? (columns.isSortedDesc ? (<div className='arrow down'></div>) : (<div className='arrow up'></div>)) : ''}
+                                </span>
+                            </th>
+                        ))}
+                    </tr>
                     ))}
-                </tr>
-                ))}
-            </thead>
-            <tbody {...getTableBodyProps()}>
-                {page.map((row) => {
-                    prepareRow(row);
-                    return (
-                        <tr {...row.getRowProps()}>
-                            {row.cells.map((cell) => (
-                                <td {...cell.getCellProps()}> {cell.render("Cell")} </td>
-                            ))}
-                        </tr>
-                    );
-                })}
-            </tbody>
-        </table>
+                </thead>
+                <tbody {...getTableBodyProps()}>
+                    {page.map((row) => {
+                        prepareRow(row);
+                        return (
+                            <tr {...row.getRowProps()}>
+                                {row.cells.map((cell) => (
+                                    <td {...cell.getCellProps()}> {cell.render("Cell")} </td>
+                                ))}
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
+        </div>
         <div className='pagination'>
             <div className="buttonContainer">
                 <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>
