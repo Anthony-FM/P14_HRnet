@@ -13,7 +13,8 @@ const initialState = {
   zipCode: '',
   department: '',
   datas: mockDatas,
-  counterData: false
+  counterData: false,
+  error: false
 }
 
 // Actions 
@@ -94,18 +95,12 @@ export const toggleCounterData = createAction('toggle/counterData')
 export default createReducer(initialState, (builder) => 
     builder
     .addCase(addFirstName, (draft, action) => {
-        if(action.payload.match(/\d/g)){
-            draft.firstname = ''
-            return
-        }
+        
         draft.firstname = action.payload
         return
     })
     .addCase(addLastName, (draft, action) => {
-        if(action.payload.match(/\d/g)){
-            draft.lastname = ''
-            return
-        }
+        
         draft.lastname = action.payload
         return
     })

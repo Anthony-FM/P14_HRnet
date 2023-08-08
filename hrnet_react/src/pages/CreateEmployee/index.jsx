@@ -50,6 +50,9 @@ import 'react-datepicker/dist/react-datepicker.css'
  */
 export function saveData(e, datas){
     e.preventDefault()
+    if(datas.firstname.match(/\d/g) || datas.lastname.match(/\d/g)){
+        return
+    }
     const dispatch = store.dispatch
     dispatch(addDatas(datas))          
 }
@@ -77,6 +80,10 @@ export default function CreateEmployee(){
         zipCode: useSelector(selectForm).zipCode,
         department: useSelector(selectForm).department
       } 
+    const firstname = useSelector(selectForm).firstname
+    console.log(firstname)
+    const lastname = useSelector(selectForm).lastname
+    console.log(lastname)
     const dateOfBirth = useSelector(selectForm).dateOfBirth
     const startDate = useSelector(selectForm).startDate  
     // const [modalstate, setModalState] = useState(false)
@@ -90,10 +97,13 @@ export default function CreateEmployee(){
                 <div className='input-wrapper'>
                     <label className="label" htmlFor="firstname">First Name</label>
                     <input id="firstname" type="text"  onChange={(e) => dispatch(addFirstName(e.target.value))} />
+                    <p>Number are not allowed</p>
                 </div>
                 <div className='input-wrapper'>
                     <label className="label" htmlFor="lastname">Last Name</label>
                     <input id="lastname" type="text"  onChange={(e) => dispatch(addLastName(e.target.value))} />
+                    
+                    
                 </div>
                 <div className='input-wrapper'>
                     <label className="label" htmlFor="dateOfBirth">Date of Birth</label>
@@ -126,6 +136,7 @@ export default function CreateEmployee(){
                 <div className='input-wrapper'>
                     <label className="label" htmlFor="street">Street</label>
                     <input id="street" type="text"  onChange={(e) => dispatch(addStreet(e.target.value))} />
+                    
                 </div>
                 <div className='input-wrapper'>
                     <label className="label" htmlFor="city">City</label>
