@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/P14_HRnet/static/css/main.3a25ccac.css",
-    "main.js": "/P14_HRnet/static/js/main.ed7f7e9d.js",
+    "main.css": "/P14_HRnet/static/css/main.3af71ae4.css",
+    "main.js": "/P14_HRnet/static/js/main.a7ae081a.js",
     "static/js/787.312e6e78.chunk.js": "/P14_HRnet/static/js/787.312e6e78.chunk.js",
     "static/media/WH_logo.jpg": "/P14_HRnet/static/media/WH_logo.550a61bba16a38a1d91d.jpg",
     "index.html": "/P14_HRnet/index.html",
-    "main.3a25ccac.css.map": "/P14_HRnet/static/css/main.3a25ccac.css.map",
-    "main.ed7f7e9d.js.map": "/P14_HRnet/static/js/main.ed7f7e9d.js.map",
+    "main.3af71ae4.css.map": "/P14_HRnet/static/css/main.3af71ae4.css.map",
+    "main.a7ae081a.js.map": "/P14_HRnet/static/js/main.a7ae081a.js.map",
     "787.312e6e78.chunk.js.map": "/P14_HRnet/static/js/787.312e6e78.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3a25ccac.css",
-    "static/js/main.ed7f7e9d.js"
+    "static/css/main.3af71ae4.css",
+    "static/js/main.a7ae081a.js"
   ]
 }
