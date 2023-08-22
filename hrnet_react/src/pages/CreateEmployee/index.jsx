@@ -266,7 +266,7 @@ export default function CreateEmployee(){
         {counterData === true ? 
             (
                 <Modal 
-                    message="my message"
+                    message="Employee Created !!!"
                     modalContainer={modalContainer}
                     modal={modal}
                     crossContainer={crossContainer}
