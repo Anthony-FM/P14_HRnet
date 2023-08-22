@@ -14,7 +14,8 @@ const initialState = {
   department: '',
   datas: mockDatas,
   counterData: false,
-  error: false
+  errorFirstnameInput: false,
+  errorLastnameInput: false
 }
 
 // Actions 
@@ -85,6 +86,19 @@ export const addDatas =createAction(
     'add/datas',
     (data) => ({
         payload : data
+    })
+)
+export const addErrorFirstname =createAction(
+    'add/errorFirstname',
+    (errorFirstnameInput) => ({
+        payload : errorFirstnameInput
+    })
+)
+
+export const addErrorLastname =createAction(
+    'add/errorLastname',
+    (errorLastnameInput) => ({
+        payload : errorLastnameInput
     })
 )
 
@@ -165,5 +179,13 @@ export default createReducer(initialState, (builder) =>
     })
     .addCase(toggleCounterData, (draft) => {
         draft.counterData = false
+    })
+    .addCase(addErrorFirstname, (draft, action) => {
+        draft.errorFirstnameInput = action.payload
+        return
+    })
+    .addCase(addErrorLastname, (draft, action) => {
+        draft.errorLastnameInput = action.payload
+        return
     })
 )

@@ -17,7 +17,9 @@ import {
     addCity,
     addZipCode, 
     addDatas,
-    toggleCounterData
+    toggleCounterData,
+    addErrorFirstname,
+    addErrorLastname
 } from '../../features/form'
 // Datas
 import { stateData, departmentDatas} from '../../data'
@@ -33,6 +35,7 @@ import store from '../../utils/redux/store'
 // date picker
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
+import {  useRef } from 'react'
 // import React, { useState } from 'react'
 
 /**
@@ -50,11 +53,85 @@ import 'react-datepicker/dist/react-datepicker.css'
  */
 export function saveData(e, datas){
     e.preventDefault()
-    if(datas.firstname.match(/\d/g) || datas.lastname.match(/\d/g)){
-        return
-    }
     const dispatch = store.dispatch
-    dispatch(addDatas(datas))          
+    if(datas.firstname.match(/\d/g) || datas.lastname.match(/\d/g)){
+        return dispatch(addErrorFirstname(true))
+    }
+    dispatch(addDatas(datas))    
+    dispatch(addErrorFirstname(false))      
+}
+
+
+
+const modalContainer = {
+    width: '100vw',
+    height: 'calc(100vh + 77px)',
+    position: 'fixed',
+    top: '-77px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(90,111,8, 0.8)',
+    cursor: 'pointer'
+}
+
+const modal = {
+    fontFamily: '"Roboto", Helvetica, sans-serif',
+    width: '50%',
+    height: '10%',
+    backgroundColor: '#fff',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: '10px',
+    border: '#6B8118 solid 3px',
+    color: '#6B8118',
+    fontSize: '1.3rem',
+    fontWeight: '600',
+    position: 'relative'
+}
+
+const crossContainer = {
+    backgroundColor: '#2b3404',
+    width: '50px',
+    height: '50px',
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
+    right: '-25px',
+    top: '-25px',
+    cursor: 'pointer'
+}
+
+const leftCross = {    
+    width: '5px',
+    height: '15px',
+    backgroundColor: '#fff',
+    transform: 'rotate(45deg) ',
+    position: 'absolute'
+}
+const rigthCross = {    
+    width: '5px',
+    height: '15px',
+    backgroundColor: '#fff',
+    transform: 'rotate(315deg)',
+    position: 'absolute'
+}
+const crossContainerHover = {
+    backgroundColor: '#2b3404',
+    width: '50px',
+    height: '50px',
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
+    right: '-25px',
+    top: '-25px',
+    cursor: 'pointer',
+    transform: 'scale(1.05)'
 }
 
 /**
@@ -79,15 +156,40 @@ export default function CreateEmployee(){
         state: useSelector(selectForm).state,
         zipCode: useSelector(selectForm).zipCode,
         department: useSelector(selectForm).department
-      } 
-    const firstname = useSelector(selectForm).firstname
-    console.log(firstname)
-    const lastname = useSelector(selectForm).lastname
-    console.log(lastname)
+      }     
     const dateOfBirth = useSelector(selectForm).dateOfBirth
     const startDate = useSelector(selectForm).startDate  
-    // const [modalstate, setModalState] = useState(false)
-   
+    const errorInputFirstname = useSelector(selectForm).errorFirstnameInput
+    const errorInputLastname = useSelector(selectForm).errorLastnameInput
+    const inputFirstname = useRef()
+    const inputLastname = useRef()
+
+    function handlerInputFirstame(e){
+        const dispatch = store.dispatch
+        if(e.target.value.match(/\d/g)){
+            dispatch(addErrorFirstname(true))
+            inputFirstname.current.style.border = 'red 1px solid'
+            inputFirstname.current.style.color = 'red'
+            return
+        }
+        inputFirstname.current.style.border = ''
+        inputFirstname.current.style.color = ''
+        dispatch(addFirstName(e.target.value))
+        dispatch(addErrorFirstname(false))
+    }
+    function handlerInputLastame(e){
+        const dispatch = store.dispatch
+        if(e.target.value.match(/\d/g)){
+            dispatch(addErrorLastname(true))
+            inputLastname.current.style.border = 'red 1px solid'
+            inputLastname.current.style.color = 'red'
+            return
+        }
+        inputLastname.current.style.border = ''
+        inputLastname.current.style.color = ''
+        dispatch(addLastName(e.target.value))
+        dispatch(addErrorLastname(false))
+    }
 
     return <section className='create-employee'>
         <h1 className='title'>  Create Employee </h1>
@@ -96,13 +198,13 @@ export default function CreateEmployee(){
                 
                 <div className='input-wrapper'>
                     <label className="label" htmlFor="firstname">First Name</label>
-                    <input id="firstname" type="text"  onChange={(e) => dispatch(addFirstName(e.target.value))} />
-                    <p>Number are not allowed</p>
+                    <input id="firstname" type="text" ref={inputFirstname} onChange={(e) => handlerInputFirstame(e)} />
+                    {errorInputFirstname ? <p className='inputError'>Number are not allowed</p> : ''}
                 </div>
                 <div className='input-wrapper'>
                     <label className="label" htmlFor="lastname">Last Name</label>
-                    <input id="lastname" type="text"  onChange={(e) => dispatch(addLastName(e.target.value))} />
-                    
+                    <input id="lastname" type="text" ref={inputLastname} onChange={(e) => handlerInputLastame(e)} />
+                    {errorInputLastname ? <p className='inputError'>Number are not allowed</p> : ''}
                     
                 </div>
                 <div className='input-wrapper'>
@@ -161,7 +263,21 @@ export default function CreateEmployee(){
         
         
         <button onClick={(e) => saveData(e, datas )} className="saveButton">Save</button>  
-        {counterData === true ? (<Modal message="Create employee !!" setModalState={() => dispatch(toggleCounterData())} />) : ''}
+        {counterData === true ? 
+            (
+                <Modal 
+                    message="my message"
+                    modalContainer={modalContainer}
+                    modal={modal}
+                    crossContainer={crossContainer}
+                    crossContainerHover={crossContainerHover}
+                    leftCross={leftCross}
+                    rigthCross={rigthCross}
+                    setModalState={() => dispatch(toggleCounterData())} 
+                />
+            )
+            : ''
+        }
         
     </section>
 }

@@ -12,7 +12,7 @@
 .divContainer {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
+    align-items: flex-start;
     padding: 0 10%;
     margin: 10px 0;
     justify-content: space-evenly;
@@ -34,6 +34,7 @@ legend{
 .input-wrapper{
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
 }
 
 .label{
@@ -43,15 +44,21 @@ legend{
     color: #2B3404;
 }
 
-input, select{
+.input-wrapper > input, select{
     padding: 8px;
-    margin: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
-input:focus, select:focus{
+.input-wrapper > input:focus, select:focus{
     color:#6C8310;
     outline: #6C8310 solid 1px;
     
+}
+.inputError{
+    margin-top: 0px;
+    color: red;
+    font-size: 0.85rem;
 }
 
 .department{
