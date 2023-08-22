@@ -1,5 +1,5 @@
 {
-  "homepage": "https://anthony-fm.github.io/P14_HRnet/",
+  
   "json.schemaDownload.enable": true,
   "name": "hrnet_react",
   "version": "0.1.0",
@@ -11,7 +11,7 @@
     "@testing-library/user-event": "^13.2.1",
     "date-fns": "^2.30.0",
     "gh-pages": "^5.0.0",
-    "p14-modal-plugin-afm": "^0.1.8",
+    "p14-modal-plugin-afm": "^1.1.0",
     "react": "^18.2.0",
     "react-datepicker": "^4.16.0",
     "react-dom": "^18.2.0",
