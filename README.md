@@ -1,7 +1,3 @@
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/validated-html5.svg)](https://forthebadge.com)
-
 ![Static Badge](https://img.shields.io/badge/NodeJs-v18.16.1-%2343853D)
 ![Static Badge](https://img.shields.io/badge/React-%5E18.2.0-%2361DAFB)
 ![Static Badge](https://img.shields.io/badge/React--datepicker-4.16.0-%23FB8114)
@@ -64,3 +60,7 @@ Ouvrez [http://localhost:3000](http://localhost:3000) pour voir sur votre naviga
 ##### Démarrer avec Create React App
 
 Ce projet a été lancé avec [Create React App](https://github.com/facebook/create-react-app).
+
+###### Github pages
+
+💻  https://anthony-fm.github.io/P14_HRnet/#/  💻
